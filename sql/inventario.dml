@@ -1,0 +1,19 @@
+--*
+-- @file inventario.functions.sql
+--
+-- @brief Funciones para utilizadas para inventario
+--
+-- @author Josué Gutiérrez Quino <josuandroidg7@gmail.com>
+--
+--
+
+with productosBohemian ( producto, descripcion, costo_unitario, photo ) as (
+    values
+        ( 'Ron Abuelo' , 'Ron Abuelo 7 Años es el resultado de nuestra pasión por producir el mejor ron añejo. Elaborado de la fermentación de mieles de caña, se envejece por 7 años en pequeños barriles de roble blanco, cuidadosamente seleccionados para este producto.', 90.5, 'https://www.totalbeveragesolution.com/wp-content/uploads/Ron-Abuelo-Anejo-7-year.png' ),
+        ( 'Wiski'      , 'Ron Abuelo 7 Años es el resultado de nuestra pasión por producir el mejor ron añejo. Elaborado de la fermentación de mieles de caña, se envejece por 7 años en pequeños barriles de roble blanco, cuidadosamente seleccionados para este producto.', 87.5, 'https://www.totalbeveragesolution.com/wp-content/uploads/Ron-Abuelo-Anejo-7-year.png' ),
+        ( 'Lix'        , 'Ron Abuelo 7 Años es el resultado de nuestra pasión por producir el mejor ron añejo. Elaborado de la fermentación de mieles de caña, se envejece por 7 años en pequeños barriles de roble blanco, cuidadosamente seleccionados para este producto.', 50.5, 'https://www.totalbeveragesolution.com/wp-content/uploads/Ron-Abuelo-Anejo-7-year.png' )
+    )
+    select
+        inventario.crearProducto( producto, descripcion, costo_unitario, photo )
+      from
+        productosBohemian; 
